@@ -1,5 +1,5 @@
 def puntos():
-    datosPuntos = pd.read_excel("CenVacGeoLocAllFieldsConoNorte.xlsx")#,header=None,sheet_name= "minutos")
+    datosPuntos = pd.read_excel("CenVacGeoLocAllFieldsConoNorte.xlsx")
     p=[]
     for i in datosPuntos["Centro"]:
         p.append(i)
@@ -41,7 +41,7 @@ def LocationXLS():
     COORDY={}
     PESO={}
     p=puntos()
-    datosPuntos = pd.read_excel("CenVacGeoLocAllFieldsConoNorte.xlsx")#,header=None,sheet_name= "minutos")
+    datosPuntos = pd.read_excel("CenVacGeoLocAllFieldsConoNorte.xlsx")
     for r in datosPuntos.index:
         COORDX[p[r]]=datosPuntos['lng'][r]
         COORDY[p[r]]=datosPuntos['lat'][r]
