@@ -35,7 +35,7 @@ library(reticulate)
 
 # UNIVERSIDAD_DE_LIMA/IDIC/
 
-data <- read_csv("GeolocalizacionNuevo.csv")#,sheetName = "Hoja1" )
+data <- read_csv("GeolocalizacionNuevo.csv")
 data2<-data
 data2$rownumber = 1:dim(data2)[1]
 data2$c = paste("Dirección", data2$rownumber, sep="-")
@@ -44,7 +44,7 @@ data_valores<- as.list(data$Address)
 #data_valores<- list("Dirección-1","Dirección-2","Dirección-3")
 #print(typeof(data_valores))
 # Define UI for application that draws a histogram
-data3 <- read_excel("dataset5.xlsx")#,sheetName = "Hoja1" )
+data3 <- read_excel("dataset5.xlsx")
 data4<-data3
 data4$rownumber = 1:dim(data4)[1]
 data4$c = paste("Dirección", data4$rownumber, sep="-")
@@ -438,7 +438,7 @@ server <- function(input, output) {
       #google_distance(origins = o,
       #                destinations = d,
       #                key = api_key,
-      #                simplify = FALSE)  ## use simplify = T to simplify to a data.frame
+      #                simplify = FALSE)  
       
       #<-data.matrix(df_way)
       
