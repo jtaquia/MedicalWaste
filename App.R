@@ -33,7 +33,7 @@ library(mapsapi)
 library(xlsx)
 library(reticulate)
 
-#setwd("D:/DOCUMENTOS/UNIVERSIDAD_DE_LIMA/IDIC/2023/informesTrimestrales/cuartoInforme/modeloMejoradoR")
+# UNIVERSIDAD_DE_LIMA/IDIC/
 
 data <- read_csv("GeolocalizacionNuevo.csv")#,sheetName = "Hoja1" )
 data2<-data
@@ -397,10 +397,10 @@ server <- function(input, output) {
         direcciones<-as.list(l)
       }
       
-      #set.api.key("AIzaSyBND23DPhlFsLkLBSvWSRWf0pZJaFrVk-8")
+     
       ############ gmapsdistance #######################
       ############ gmapsdistance #######################
-      # set.api.key(key)
+     
       # key	is the user's Google Maps API key
       ##################################################
       ##################################################
@@ -409,8 +409,8 @@ server <- function(input, output) {
       
       direcciones<-as.list(l)
       
-      map_key <- "AIzaSyB5PwBCogda-F6Rp1MTFkUiVZ2p8vbOa1w"
-      api_key <- "AIzaSyB5PwBCogda-F6Rp1MTFkUiVZ2p8vbOa1w"
+      map_key <- "#############################"
+      api_key <- "#############################"
       
       google_map(key = map_key,location = c(-12.114467, -76.9699337) ,
                  zoom = 16,
@@ -621,8 +621,8 @@ server <- function(input, output) {
       reticulate::virtualenv_create("python35_env", python = "python3")
       reticulate::virtualenv_install("python35_env", packages = c("networkx", "pandas", "numpy", "vrpy", "fsspec","openpyxl"))
       reticulate::use_virtualenv("python35_env", required = TRUE)
-      #reticulate::source_python("D:/DOCUMENTOS/UNIVERSIDAD_DE_LIMA/IDIC/2022/ProyectoInvestigacion/vrp/vrpInvestigacion/examples/vacunacioncvrptimewindow.py")
-      #reticulate::py_run_file("D:/DOCUMENTOS/UNIVERSIDAD_DE_LIMA/IDIC/2022/ProyectoInvestigacion/vrp/vrpInvestigacion/examples/vacunacioncvrptimewindow.py")
+      #reticulate::source_python("~/vacunacioncvrptimewindow.py")
+      #reticulate::py_run_file("D:~/vacunacioncvrptimewindow.py")
       reticulate::source_python("vacunacioncvrptimewindowFuncionC.py")
       run_model_value(input$Capacidad)
       #print(resultado[1])
@@ -638,8 +638,7 @@ server <- function(input, output) {
       reticulate::virtualenv_create("python35_env", python = "python3")
       reticulate::virtualenv_install("python35_env", packages = c("networkx", "pandas", "numpy", "vrpy", "fsspec","openpyxl"))
       reticulate::use_virtualenv("python35_env", required = TRUE)
-      #reticulate::source_python("D:/DOCUMENTOS/UNIVERSIDAD_DE_LIMA/IDIC/2022/ProyectoInvestigacion/vrp/vrpInvestigacion/examples/vacunacioncvrptimewindow.py")
-      #reticulate::py_run_file("D:/DOCUMENTOS/UNIVERSIDAD_DE_LIMA/IDIC/2022/ProyectoInvestigacion/vrp/vrpInvestigacion/examples/vacunacioncvrptimewindow.py")
+     
       reticulate::source_python("vacunacioncvrptimewindowFuncionB.py")
       run_model_vrp(input$Capacidad)#run_model_vrp es el nombre de la función en el script del source_python
       
@@ -660,11 +659,11 @@ server <- function(input, output) {
       reticulate::virtualenv_create("python35_env", python = "python3")
       reticulate::virtualenv_install("python35_env", packages = c("gmplot","gurobipy","pandas", "numpy", "openpyxl"))
       reticulate::use_virtualenv("python35_env", required = TRUE)
-      #reticulate::source_python("D:/DOCUMENTOS/UNIVERSIDAD_DE_LIMA/IDIC/2022/ProyectoInvestigacion/vrp/vrpInvestigacion/examples/vacunacioncvrptimewindow.py")
-      #reticulate::py_run_file("D:/DOCUMENTOS/UNIVERSIDAD_DE_LIMA/IDIC/2022/ProyectoInvestigacion/vrp/vrpInvestigacion/examples/vacunacioncvrptimewindow.py")
+      #reticulate::source_python("~/vacunacioncvrptimewindow.py")
+      #reticulate::py_run_file("~/vacunacioncvrptimewindow.py")
       reticulate::source_python("IDIC_21_03_2024_CapacidadDinamica.py")
-      reticulate::py_run_file("D:/DOCUMENTOS/UNIVERSIDAD_DE_LIMA/IDIC/2023/informesTrimestrales/cuartoInforme/mipCorregido/IDIC_21_03_2024.py")
-      #reticulate::source_python("D:/DOCUMENTOS/UNIVERSIDAD_DE_LIMA/IDIC/2022/ProyectoInvestigacion/vrp/vrpInvestigacion/examples/vacunacioncvrptimewindowFuncionB.py")
+      reticulate::py_run_file("~/IDIC_21_03_2024.py")
+      #reticulate::source_python("~/vacunacioncvrptimewindowFuncionB.py")
       resolver_VRP(input$Capacidad_B)
     } else {
       
@@ -719,14 +718,14 @@ server <- function(input, output) {
                     
                   }
                 })
-                   api_key <- "AIzaSyB5PwBCogda-F6Rp1MTFkUiVZ2p8vbOa1w"
+                   api_key <- "~"
                    google_map(key = map_key, 
                               search_box = TRUE, 
                               scale_control = TRUE, 
                               height = 1000) %>%
                      add_traffic()
                  })
-                 res <- google_directions(key = "AIzaSyB5PwBCogda-F6Rp1MTFkUiVZ2p8vbOa1w",
+                 res <- google_directions(key = "~",
                                           origin = o,
                                           waypoints = list(stop = w,
                                                            stop = q),
@@ -764,8 +763,8 @@ server <- function(input, output) {
     if (input$submitbutton105>0) { 
       isolate(datasetInput()) 
     } else {
-      map_key <- "AIzaSyB5PwBCogda-F6Rp1MTFkUiVZ2p8vbOa1w"
-      api_key <- "AIzaSyB5PwBCogda-F6Rp1MTFkUiVZ2p8vbOa1w"
+      map_key <- "~"
+      api_key <- "~"
       google_map(key = map_key, 
                  search_box = TRUE, 
                  scale_control = TRUE, 
