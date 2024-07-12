@@ -19,10 +19,10 @@ from json import dumps
 
 def run_model_vrp(capacidad):
     
-    #DISTANCES = pd.read_excel("D://DOCUMENTOS//UNIVERSIDAD_DE_LIMA//IDIC//2022//ProyectoInvestigacion//vrp//vrpInvestigacion//examples//output2DistanciasSourceSink.xlsx",header=0)
+    #DISTANCES = pd.read_excel("/output2DistanciasSourceSink.xlsx",header=0)
     DISTANCES = pd.read_excel("output2DistanciasSourceSink.xlsx",header=0)
-    #TIEMPOS_RECORRIDO = pd.read_excel("D://DOCUMENTOS//UNIVERSIDAD_DE_LIMA//IDIC//2022//ProyectoInvestigacion//vrp//vrpInvestigacion//examples//outputTiemposSourceSink.xlsx")#,header=None,sheet_name= "minutos")
-    TIEMPOS_RECORRIDO = pd.read_excel("outputTiemposSourceSink.xlsx")#,header=None,sheet_name= "minutos")
+    #TIEMPOS_RECORRIDO = pd.read_excel("//outputTiemposSourceSink.xlsx")
+    TIEMPOS_RECORRIDO = pd.read_excel("outputTiemposSourceSink.xlsx")
     DISTANCES2=DISTANCES.values.tolist()
     TRAVEL_TIMES = TIEMPOS_RECORRIDO.values.tolist()
 
@@ -134,14 +134,14 @@ def run_model_vrp(capacidad):
     # The matrix is transformed into a DiGraph
     A = array(DISTANCES2, dtype=[("cost", int)])
 
-    #G = from_numpy_matrix(A, create_using=nx.DiGraph()) esto era antes del 2023. En enero 2023 cambio to_networkx_graph
+   
     G = to_networkx_graph(A, create_using=nx.DiGraph())
 
     # The demands are stored as node attributes
     set_node_attributes(G, values=DEMAND, name="demand")
 
     # The depot is relabeled as Source and Sink
-    G = relabel_nodes(G, {0: "Source", 18: "Sink"}) #el valor de 18 porque es la ultima columna
+    G = relabel_nodes(G, {0: "Source", 18: "Sink"}) 
 
     #G.edges
 
