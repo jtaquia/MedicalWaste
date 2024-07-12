@@ -64,9 +64,9 @@ def resolver_VRP(cap):
     global PESO
 
     options = {
-        "WLSACCESSID": "7d6dd4db-67b1-4cdf-8050-b33ecd810832",
-        "WLSSECRET": "473c853a-f0c3-424c-8623-89a013977a03",
-        "LICENSEID": 2492626,
+        "WLSACCESSID": "~",
+        "WLSSECRET": "~",
+        "LICENSEID": ~ ,
         }
 
     enviroment=Env(params=options)
@@ -250,4 +250,4 @@ resolver_VRP(capacidad)
 global COORDX, COORDY
 COORDX={}
 COORDY={}
-#df=pd.DataFrame()
+
